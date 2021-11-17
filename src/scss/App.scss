@@ -1,4 +1,6 @@
 @import "mixins";
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500&display=swap');
+$fontRoom: 'Spartan';
 
 body {
     margin: 0px;
@@ -8,18 +10,57 @@ body {
 
 
 /*==========  ID Rules  ==========*/
+#menuBar {
+    max-height: 100px;
+    transition: all 0.5s ease-in-out;
+    @include landscapeSet {
+        max-height: 110px;
+    }
+}
 
 
 
 /*==========  Class Rules  ==========*/
+.image-height {
+    height: 50% !important;
+}
+
+.flexbox-wrapper {
+    @include flexboxWrap;
+    .flex-info {
+       @include container;
+        section {
+            width: 80%;
+            height: 100%;
+            padding: 12% 0%;
+            margin: 0% auto;
+            font-family: $fontRoom;
+            h1 {
+                font-weight: bolder;
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 15px;
+                font-weight: bold;
+                color:  hsl(0, 0%, 63%);
+            }
+        }
+    }
+}
+
 .white {
-    max-height: 100px;
+    max-height: 0px;
+    overflow: hidden;
     height: 200px !important;
+    transition: all 0.5s ease-in-out;
     background-color: hsl(0, 0%, 100%) !important;
     .inner-container {
         @include topDogs;
         padding: 10% 0%;
         margin: 0px auto;
+        @include landscapeSet {
+            padding: 7% 0%;
+        }
         
     }
 }
@@ -41,6 +82,9 @@ body {
        @include topDogs;
        margin: 12% auto;
        position: relative;
+       @include landscapeSet {
+        margin: 10% auto;
+       }
     }
     .room-base {
        display: block;
@@ -52,24 +96,38 @@ body {
     
 }
 
+.button-holder {
+    width: 30%;
+    height: 53%;
+    margin-left: 70%;
+    @include absolutely(1);
+}
+
+.carousel-control-next, .carousel-control-prev {
+    margin-top: 70% !important;
+    @include lightenBack;
+    opacity: 1 !important;
+    width: 50% !important;
+    height: 20% !important;
+    transition: all 0.3s ease-in-out !important;
+    background-color: hsl(0, 0%, 0%) !important;
+}
+
 
 
 /*==========  Element Rules  ==========*/
 ul {
-    width: 80%;
+    width: 83%;
     padding: 0px !important;
     margin-left: auto;
     li {
-        margin: auto;
         width: (100% / 4);
         text-align: center;
+        font-weight: bolder;
         display: inline-block;
         list-style-type: none;
-        position: relative;
-        top: 50%;
-        -ms-transform: translateY(-30%);
-        -webkit-transform: translateY(-30%);
-        transform: translateY(-30%); 
+        font-family: $fontRoom;
+        @include verticalAlign(20%);
     }
 }
 

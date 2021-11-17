@@ -5,7 +5,15 @@
 }
 
 @mixin topDogs {
-    width: 85%;
+    width: 87%;
+}
+
+@mixin verticalAlign($Y) {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-$Y);
+    -webkit-transform: translateY(-$Y);
+    transform: translateY(-$Y); 
 }
 
 @mixin absolutely($index) {
@@ -21,5 +29,18 @@
     @media screen and (orientation: landscape) {
         @content;
     }
+}
+
+@mixin lightenBack {
+    &:hover {
+        transition: all 0.3s ease-in-out !important;
+        background-color: lighten($color: #000000, $amount: 15) !important;
+    }
+}
+
+@mixin flexboxWrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
