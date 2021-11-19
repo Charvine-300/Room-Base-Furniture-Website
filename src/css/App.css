@@ -5,6 +5,20 @@ body {
 }
 
 /*==========  ID Rules  ==========*/
+@media screen and (min-width: 1024px) {
+  #desktop-view {
+    width: 60% !important;
+    height: 100% !important;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  #land-scape {
+    width: 30% !important;
+    height: 100%;
+  }
+}
+
 #menuBar {
   max-height: 100px;
   -webkit-transition: all 0.5s ease-in-out;
@@ -16,11 +30,46 @@ body {
   }
 }
 
-/*==========  Class Rules  ==========*/
-.image-height {
-  height: 50% !important;
+#header-back {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
+@media screen and (orientation: landscape) {
+  #bail-bondsman {
+    width: 40% !important;
+  }
+  #bail-bondsman section {
+    width: 95%;
+    padding-bottom: 0%;
+  }
+  #bail-bondsman h2 {
+    margin-bottom: 2px;
+    font-size: 12px !important;
+  }
+  #bail-bondsman p {
+    font-size: 7px !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #bail-bondsman section {
+    width: 80%;
+    padding-top: 15% !important;
+  }
+  #bail-bondsman section h2 {
+    font-weight: bolder;
+    margin-bottom: 15px;
+    letter-spacing: 6px;
+    font-size: 17px !important;
+  }
+  #bail-bondsman section p {
+    font-weight: lighter;
+    font-size: 13px !important;
+  }
+}
+
+/*==========  Class Rules  ==========*/
 .flexbox-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32,26 +81,107 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+@media screen and (orientation: landscape) {
+  .flexbox-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .flexbox-wrapper {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
 .flexbox-wrapper .flex-info {
   width: 100%;
   height: 100%;
   margin: 0px auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media screen and (orientation: landscape) {
+  .flexbox-wrapper .flex-info {
+    height: 100%;
+    width: 50% !important;
+    margin: 0px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .flexbox-wrapper .flex-info {
+    width: 40% !important;
+  }
 }
 .flexbox-wrapper .flex-info section {
   width: 80%;
   height: 100%;
-  padding: 12% 0%;
+  padding: 15% 0%;
   margin: 0% auto;
   font-family: "Spartan";
 }
-.flexbox-wrapper .flex-info section h1 {
+@media screen and (orientation: landscape) {
+  .flexbox-wrapper .flex-info section {
+    padding-top: 10%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .flexbox-wrapper .flex-info section {
+    width: 73%;
+    padding-top: 20%;
+  }
+}
+.flexbox-wrapper .flex-info section h1, .flexbox-wrapper .flex-info section h2, .flexbox-wrapper .flex-info section h3 {
   font-weight: bolder;
   margin-bottom: 15px;
 }
+@media screen and (orientation: landscape) {
+  .flexbox-wrapper .flex-info section h1, .flexbox-wrapper .flex-info section h2, .flexbox-wrapper .flex-info section h3 {
+    font-size: 20px !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .flexbox-wrapper .flex-info section h1 {
+    margin-bottom: 20px;
+    font-size: 40px !important;
+  }
+}
+.flexbox-wrapper .flex-info section h2 {
+  font-size: 17px;
+  text-transform: uppercase;
+}
 .flexbox-wrapper .flex-info section p {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   color: #a1a1a1;
+}
+@media screen and (min-width: 1024px) {
+  .flexbox-wrapper .flex-info section p {
+    font-weight: lighter;
+  }
+}
+.flexbox-wrapper .flex-info section .arrow-box {
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+}
+.flexbox-wrapper .flex-info section .arrow-box h3 {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 15px !important;
+  letter-spacing: 10px;
+  margin-right: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .flexbox-wrapper .flex-info section .arrow-box h3 {
+    margin-top: 30px;
+  }
 }
 
 .white {
@@ -72,12 +202,71 @@ body {
     padding: 7% 0%;
   }
 }
+@media screen and (min-width: 1024px) {
+  .white {
+    width: 35% !important;
+    margin-left: 2% !important;
+    margin-right: auto;
+    max-height: 100px;
+    background-color: transparent !important;
+  }
+  .white .inner-container {
+    height: 100%;
+    padding: 0%;
+  }
+  .white .inner-container .menu-icon {
+    margin-top: 0.5%;
+  }
+  .white ul {
+    margin-top: 12%;
+    margin-left: 20%;
+  }
+  .white ul li {
+    text-align: center;
+    width: 20%;
+    font-size: 12px;
+    color: white;
+    -webkit-transition: all 0.3s ease-in-out !important;
+    transition: all 0.3s ease-in-out !important;
+  }
+  .white ul li:hover {
+    cursor: pointer;
+  }
+  .white ul li:after {
+    content: "";
+    display: block;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    border-bottom: solid 3px white;
+    -webkit-transition: -webkit-transform 250ms ease-in-out;
+    transition: -webkit-transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  }
+  .white ul li:hover:after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
 
 .app {
   position: relative;
   width: 100%;
   height: 100%;
   margin: 0px auto;
+  height: 100vh;
+  margin-bottom: 18%;
+}
+@media screen and (orientation: landscape) {
+  .app {
+    height: 85vh;
+    margin-bottom: 0%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .app {
+    height: 75vh;
+  }
 }
 
 .miso-soup {
@@ -102,6 +291,8 @@ body {
   right: 0;
   bottom: 0;
   z-index: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .header header {
   width: 87%;
@@ -110,7 +301,14 @@ body {
 }
 @media screen and (orientation: landscape) {
   .header header {
-    margin: 10% auto;
+    width: 50%;
+    margin: 10% auto 10% 5%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header header {
+    display: none;
+    margin: 5%;
   }
 }
 .header .room-base {
@@ -123,8 +321,8 @@ body {
 
 .button-holder {
   width: 30%;
-  height: 53%;
-  margin-left: 70%;
+  height: 50%;
+  margin: 85% 0% 0% 70%;
   position: absolute;
   top: 0;
   left: 0;
@@ -132,9 +330,30 @@ body {
   bottom: 0;
   z-index: 1;
 }
+@media screen and (orientation: landscape) {
+  .button-holder {
+    margin-top: 38.5%;
+    width: 20% !important;
+    margin-left: 0%;
+    margin-right: 80%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .button-holder {
+    margin-top: 32.7%;
+    margin-left: 60%;
+    margin-right: 0%;
+    width: 10% !important;
+  }
+}
+
+.carousel, .carousel-inner {
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+}
 
 .carousel-control-next, .carousel-control-prev {
-  margin-top: 70% !important;
   opacity: 1 !important;
   width: 50% !important;
   height: 20% !important;
@@ -147,6 +366,16 @@ body {
   transition: all 0.3s ease-in-out !important;
   background-color: #262626 !important;
 }
+@media screen and (orientation: landscape) {
+  .carousel-control-next, .carousel-control-prev {
+    height: 40% !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .carousel-control-next, .carousel-control-prev {
+    height: 25% !important;
+  }
+}
 
 /*==========  Element Rules  ==========*/
 ul {
@@ -156,7 +385,6 @@ ul {
 }
 ul li {
   width: 25%;
-  text-align: center;
   font-weight: bolder;
   display: inline-block;
   list-style-type: none;

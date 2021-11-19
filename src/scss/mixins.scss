@@ -31,6 +31,12 @@
     }
 }
 
+@mixin desktopView {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
 @mixin lightenBack {
     &:hover {
         transition: all 0.3s ease-in-out !important;
@@ -38,9 +44,32 @@
     }
 }
 
+@mixin menuBottom {
+    &:hover {
+        cursor: pointer;
+    }
+    &:after {
+        content: '';
+        display: block;
+        transform: scaleX(0);  
+        border-bottom: solid 3px hsl(0, 0%, 100%);  
+        transition: transform 250ms ease-in-out;
+    }
+    &:hover:after {
+        transform: scaleX(1); 
+    }
+}
+
 @mixin flexboxWrap {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    @include landscapeSet {
+        flex-direction: row;
+    }
+    @include desktopView {
+        width: fit-content;
+        height: fit-content;
+    }
 }
 

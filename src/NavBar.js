@@ -2,28 +2,30 @@ import './css/App.css';
 import { useState } from 'react';
 import Room from './images/logo.svg';
 import Menu from './images/icon-hamburger.svg';
-import CloseMenu from './images/icon-close.svg';
 
 
-const NavBar = () => {
+
+const NavBar = ({photochange}) => {
   const [turkey, setTurkey] = useState('');  
-
-
+  const [misosoup, setMisoSoup] = useState('');
+  
   function showMenu() {
     if (turkey === '') {
       setTurkey('menuBar');
+      setMisoSoup('header-back');
     }
     else {
       setTurkey('');
+      setMisoSoup('');
     }
   }
 
 
   return ( 
-    <div className="header">
+    <div className="header" id={misosoup} >
       <div className="header white" id={turkey}> 
         <div className="inner-container">
-          <img src={CloseMenu} alt="Close Menu Button" className="menu-icon" onClick={showMenu} />
+          <img src={photochange} alt="Close Menu Button" className="menu-icon" onClick={showMenu} />
           <ul>
             <li> home </li>
             <li> shop </li>
@@ -37,10 +39,7 @@ const NavBar = () => {
         <img src={Menu} alt="Menu Icon" className="menu-icon" onClick={showMenu} />
         <img src={Room} alt="Room Base Logo" className="room-base"/>
         </div>
-      </header>
-
-
-            
+      </header>      
     </div>
   );
 }

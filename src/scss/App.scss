@@ -10,6 +10,20 @@ body {
 
 
 /*==========  ID Rules  ==========*/
+#desktop-view {
+    @include desktopView {
+        width: 60% !important;
+        height: 100% !important;
+    }
+}
+
+#land-scape {
+    @include landscapeSet {
+        width: 30% !important;
+        height: 100%;
+    }
+}
+
 #menuBar {
     max-height: 100px;
     transition: all 0.5s ease-in-out;
@@ -18,32 +32,116 @@ body {
     }
 }
 
+#header-back {
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+#bail-bondsman {
+    @include landscapeSet {
+        width: 40% !important;
+        section {
+            width: 95%;
+            padding-bottom: 0%;
+        }
+        h2 {
+            margin-bottom: 2px;
+            font-size: 12px !important;
+        }
+        p {
+            font-size: 7px !important;
+        }
+    }
+    @include desktopView {
+        section {
+            width: 80%;
+            padding-top: 15% !important;
+            h2 {
+                font-weight: bolder;
+                margin-bottom: 15px;
+                letter-spacing: 6px;
+                font-size: 17px !important;
+            }
+            p {
+                font-weight: lighter;
+                font-size: 13px !important;
+            }
+        }
+    }
+}
+
+
+
+
 
 
 /*==========  Class Rules  ==========*/
-.image-height {
-    height: 50% !important;
-}
-
 .flexbox-wrapper {
     @include flexboxWrap;
     .flex-info {
        @include container;
+       height: fit-content;
+       @include landscapeSet {
+           height: 100%;
+           width: 50% !important;
+           margin: 0px;
+        }
+        @include desktopView {
+            width: 40% !important;
+        }
         section {
             width: 80%;
             height: 100%;
-            padding: 12% 0%;
+            padding: 15% 0%;
             margin: 0% auto;
             font-family: $fontRoom;
-            h1 {
+            @include landscapeSet {
+                padding-top: 10%;
+            }
+            @include desktopView {
+                width: 73%;
+                padding-top: 20%;
+            }
+            h1, h2, h3 {
                 font-weight: bolder;
                 margin-bottom: 15px;
+                @include landscapeSet {
+                    font-size: 20px !important;
+                }
+            }
+            h1 {
+                @include desktopView {
+                    margin-bottom: 20px;
+                    font-size: 40px !important;
+                }
+            }
+            h2 {
+                font-size: 17px;
+                text-transform: uppercase;
             }
             p {
-                font-size: 15px;
+                font-size: 13px;
                 font-weight: bold;
                 color:  hsl(0, 0%, 63%);
+                @include desktopView {
+                    font-weight: lighter;
+                }
             }
+
+            .arrow-box {
+                @include container;
+                h3 {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    font-size: 15px !important;
+                    letter-spacing: 10px;
+                    margin-right: 10px;
+                    @include desktopView {
+                        margin-top: 30px;
+                    }
+                }
+            }
+            
         }
     }
 }
@@ -60,14 +158,52 @@ body {
         margin: 0px auto;
         @include landscapeSet {
             padding: 7% 0%;
+        } 
+    }
+    @include desktopView {
+        width: 35% !important;
+        margin-left: 2% !important;
+        margin-right: auto;
+        max-height: 100px;
+        background-color: transparent !important;
+        .inner-container {
+            height: 100%;
+            padding: 0%;
+            .menu-icon {
+                margin-top: 0.5%
+            }
         }
-        
+        ul {
+            margin-top: 12%;
+            margin-left: 20%;
+            li {
+                text-align: center;
+                width: (80% / 4);
+                font-size: 12px;
+                color: hsl(0, 0%, 100%);
+                transition: all 0.3s ease-in-out !important;
+                @include menuBottom;
+            }
+        }
+       
+         
     }
 }
+
 
 .app {
     position: relative;
     @include container;
+    height: 100vh;
+    margin-bottom: 18%;
+    @include landscapeSet {
+        height: 85vh;
+        margin-bottom: 0%;
+    }
+    @include desktopView {
+        height: 75vh;
+    }
+    
 }
 
 .miso-soup {
@@ -78,13 +214,19 @@ body {
 .header {
     @include container;
     @include absolutely(1);
+    transition: all 0.5s ease-in-out;
     header {
        @include topDogs;
        margin: 12% auto;
        position: relative;
        @include landscapeSet {
-        margin: 10% auto;
-       }
+           width: 50%;
+           margin: 10% auto 10% 5%;
+        }
+        @include desktopView {
+            display: none;
+            margin: 5%;
+        }
     }
     .room-base {
        display: block;
@@ -98,19 +240,41 @@ body {
 
 .button-holder {
     width: 30%;
-    height: 53%;
-    margin-left: 70%;
+    height: 50%;
+    margin: 85% 0% 0% 70%;
     @include absolutely(1);
+    @include landscapeSet {
+        margin-top: 38.5%;
+        width: 20% !important;
+        margin-left: 0%;
+        margin-right: 80%;
+    }
+    @include desktopView {
+        margin-top: 32.7%;
+        margin-left: 60%;
+        margin-right: 0%;
+        width: 10% !important;
+
+    }
+}
+
+.carousel, .carousel-inner {
+    @include container;
 }
 
 .carousel-control-next, .carousel-control-prev {
-    margin-top: 70% !important;
     @include lightenBack;
     opacity: 1 !important;
     width: 50% !important;
     height: 20% !important;
     transition: all 0.3s ease-in-out !important;
     background-color: hsl(0, 0%, 0%) !important;
+    @include landscapeSet {
+        height: 40% !important;
+    }
+    @include desktopView {
+        height: 25% !important;
+    }
 }
 
 
@@ -122,7 +286,6 @@ ul {
     margin-left: auto;
     li {
         width: (100% / 4);
-        text-align: center;
         font-weight: bolder;
         display: inline-block;
         list-style-type: none;
