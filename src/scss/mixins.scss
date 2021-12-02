@@ -11,8 +11,6 @@
 @mixin verticalAlign($Y) {
     position: relative;
     top: 50%;
-    -ms-transform: translateY(-$Y);
-    -webkit-transform: translateY(-$Y);
     transform: translateY(-$Y); 
 }
 
